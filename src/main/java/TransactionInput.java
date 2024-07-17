@@ -1,41 +1,43 @@
-// Represents an input in a Bitcoin transaction
 public class TransactionInput {
-    private String previousTransactionId;
-    private int outputIndex;
+    private String transactionId;
+    private int index;
     private String scriptSig;
+    private String signature;
 
-    // Constructor
-    public TransactionInput(String previousTransactionId, int outputIndex, String scriptSig) {
-        this.previousTransactionId = previousTransactionId;
-        this.outputIndex = outputIndex;
+    public TransactionInput(String transactionId, int index, String scriptSig) {
+        this.transactionId = transactionId;
+        this.index = index;
         this.scriptSig = scriptSig;
+        this.signature = "";
     }
 
-    // Getters and Setters
-    public String getPreviousTransactionId() {
-        return previousTransactionId;
+    public String getTransactionId() {
+        return transactionId;
     }
 
-    public void setPreviousTransactionId(String previousTransactionId) {
-        this.previousTransactionId = previousTransactionId;
-    }
-
-    public int getOutputIndex() {
-        return outputIndex;
-    }
-
-    public void setOutputIndex(int outputIndex) {
-        this.outputIndex = outputIndex;
+    public int getIndex() {
+        return index;
     }
 
     public String getScriptSig() {
         return scriptSig;
     }
 
-    public void setScriptSig(String scriptSig) {
-        this.scriptSig = scriptSig;
+    public void setSignature(String signature) {
+        this.signature = signature;
+    }
+
+    public String getSignature() {
+        return signature;
+    }
+
+    @Override
+    public String toString() {
+        return "TransactionInput{" +
+                "transactionId='" + transactionId + '\'' +
+                ", index=" + index +
+                ", scriptSig='" + scriptSig + '\'' +
+                ", signature='" + signature + '\'' +
+                '}';
     }
 }
-
-
-
